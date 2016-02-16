@@ -18,6 +18,7 @@ namespace Tennis
             this.player2Name = player2Name;
         }
 
+        //Set Points
         public string GetScore()
         {
             string score = "";
@@ -105,6 +106,7 @@ namespace Tennis
             return score;
         }
 
+        //Set score for player 1
         public void SetP1Score(int number)
         {
 
@@ -115,6 +117,7 @@ namespace Tennis
 
         }
 
+        //Set score for player 2
         public void SetP2Score(int number)
         {
 
@@ -125,16 +128,19 @@ namespace Tennis
 
         }
 
+        //Add score for player 1
         public void P1Score()
         {
             P1point++;
         }
 
+        //Add score for player 2
         public void P2Score()
         {
             P2point++;
         }
 
+        //Return score
         public void WonPoint(string player)
         {
             if (player == "player1")

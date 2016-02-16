@@ -1,21 +1,22 @@
 using System;
 
 namespace Tennis
-{
+{    
     class TennisGame1 : TennisGame
     {
         private int scorePlayer1 = 0;
         private int scorePlayer2 = 0;
 
         private readonly string player1Name;
-        private readonly string player2Name;
-
+        private readonly string player2Name;     
+  
         public TennisGame1(string player1Name, string player2Name)
         {
             this.player1Name = player1Name;
             this.player2Name = player2Name;
         }
 
+        //Set point for player
         public void WonPoint(string playerName)
         {
             if (string.IsNullOrEmpty(playerName))
@@ -30,6 +31,7 @@ namespace Tennis
                 scorePlayer2 += 1;
         }
 
+        //Get score players
         public string GetScore()
         {
             if (scorePlayer1 <= Convert.ToInt32(IndividualScoreValues.Forty) &&
@@ -42,6 +44,7 @@ namespace Tennis
             return AtLeastOneScoreOverFourPoints();
         }
 
+        //Verify score
         private string StandardScore()
         {
             if (scorePlayer1 == scorePlayer2)
@@ -55,11 +58,13 @@ namespace Tennis
             return string.Format("{0}-{1}", elementaryScoreNames[scorePlayer1], elementaryScoreNames[scorePlayer2]);
         }
 
+        //More than forty score
         private string EqualScoreFourtyAndOver()
         {
             return advancedScoreNames[0];
         }
 
+        //Score difference at least four points
         private string AtLeastOneScoreOverFourPoints()
         {
             int scoresDifference = scorePlayer1 - scorePlayer2;
